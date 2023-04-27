@@ -6,7 +6,6 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const { user, logoutUser } = useContext(AuthContext);
   const navigate = useNavigate();
-  console.log(user);
 
   return (
     <nav className="w-full bg-gray-900 shadow">
