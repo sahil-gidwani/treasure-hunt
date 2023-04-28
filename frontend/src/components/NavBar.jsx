@@ -11,15 +11,18 @@ export default function NavBar() {
   const [level, setLevel] = useState(0);
 
   useEffect(() => {
-    const getLevel = async () => {
-      try {
-        const response = await api.get("/accounts/get_level/");
-        setLevel(response.data.current_level);
-      } catch (error) {
-        alert("Something went wrong!");
-      }
-    };
-    getLevel();
+    const token = localStorage.getItem("token");
+    if (token) {
+      const getLevel = async () => {
+        try {
+          const response = await api.get("/accounts/get_level/");
+          setLevel(response.data.current_level);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      getLevel();
+    }
   }, []);
 
   const handleSetLevel = async () => {
@@ -102,6 +105,9 @@ export default function NavBar() {
           >
             {!user ? (
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                <button className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900">
+                  Primary
+                </button>
                 <button
                   className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
                   onClick={() => navigate("/")}

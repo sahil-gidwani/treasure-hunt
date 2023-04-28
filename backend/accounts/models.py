@@ -3,6 +3,11 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.base_user import BaseUserManager
 
+GENDER_CHOICES = (
+    ('Male', 'Male'),
+    ('Female', 'Female'),
+)
+
 
 class CustomUserManager(BaseUserManager):
     use_in_migrations = True
@@ -36,7 +41,10 @@ class CustomUserManager(BaseUserManager):
 class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(_('email address'), unique=True)
-    current_level = models.PositiveIntegerField(default=0)
+    age = models.PositiveIntegerField()
+    gender = models.CharField(
+        max_length=255, choices=GENDER_CHOICES)
+    current_level = models.PositiveIntegerField(default=1)
     current_score = models.PositiveIntegerField(default=0)
     high_score = models.PositiveIntegerField(default=0)
 

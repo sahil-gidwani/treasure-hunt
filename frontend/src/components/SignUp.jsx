@@ -7,12 +7,21 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
   const [alerts, setAlerts] = useState({});
   const navigate = useNavigate();
 
-  const registerUser = async (email, password1, password2) => {
+  const registerUser = async (email, password1, password2, age, gender) => {
     try {
-      const data = JSON.stringify({ email, password1, password2 });
+      const parsedAge = parseInt(age);
+      const data = JSON.stringify({
+        email,
+        password1,
+        password2,
+        age: parsedAge,
+        gender,
+      });
       const options = { headers: { "content-type": "application/json" } };
       const response = await axios.post(
         `http://127.0.0.1:8000/accounts/signup/`,
@@ -32,8 +41,15 @@ const SignUp = () => {
     e.preventDefault();
     if (password1 !== password2) {
       setAlerts({ message: "Passwords do not match!", type: "error" });
+    } else if (!age || !gender) {
+      setAlerts({
+        message: "Please fill in all required fields!",
+        type: "error",
+      });
+    } else if (age <= 0) {
+      setAlerts({ message: "Age should be greater than 0!", type: "error" });
     } else {
-      registerUser(email, password1, password2);
+      registerUser(email, password1, password2, age, gender);
     }
   };
 
@@ -91,22 +107,60 @@ const SignUp = () => {
               name="password2"
               type="password"
               required
-              className="w-full px-          4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword2(e.target.value)}
             />
           </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-500 focus:bg-blue-700 focus:outline-none"
-          >
-            Sign Up
-          </button>
+          <div>
+            <label
+              htmlFor="age"
+              className="block text-gray-800 font-medium mb-2"
+            >
+              Age
+            </label>
+            <input
+              id="age"
+              name="age"
+              type="number"
+              min="1"
+              required
+              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              onChange={(e) => setAge(e.target.value)}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="gender"
+              className="block text-gray-800 font-medium mb-2"
+            >
+              Gender
+            </label>
+            <select
+              id="gender"
+              name="gender"
+              required
+              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="">--Please select your gender--</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium focus:outline-none focus:shadow-outline"
+            >
+              Register
+            </button>
+          </div>
         </form>
-        <div className="text-center mt-4">
+        <div className="text-gray-800 text-center mt-6">
           Already have an account?{" "}
           <a
+            className="font-medium text-blue-600 cursor-pointer hover:text-blue-500"
             onClick={() => navigate("/login")}
-            className="font-medium text-blue-700 cursor-pointer hover:text-blue-500"
           >
             Login here!
           </a>

@@ -10,4 +10,5 @@ urlpatterns = [
     path('set_level/', views.SetLevelView.as_view(), name='set_level'),
     path('get_score/', views.GetScoreView.as_view(), name='get_score'),
     path('set_score/', views.SetScoreView.as_view(), name='set_score'),
+    path('dashboard/', views.DashboardView, name='dashboard'),
 ]

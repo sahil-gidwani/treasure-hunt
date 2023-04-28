@@ -1,118 +1,141 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import Alert from "./Alert";
+import React, { useState, useEffect } from "react";
+import useAxios from "../utils/useAxios";
+import Plot from "react-plotly.js";
 
 const Dashboard = () => {
-  const [email, setEmail] = useState("");
-  const [password1, setPassword1] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [alerts, setAlerts] = useState({});
-  const navigate = useNavigate();
+  const api = useAxios();
+  const [averageHighScore, setAverageHighScore] = useState();
+  const [users, setUsers] = useState([]);
+  const [totalUsers, setTotalUsers] = useState();
+  const [gender_pie, setGenderPie] = useState();
+  const [age_pie, setAgePie] = useState();
+  const [bar, setBar] = useState();
+  const [scatter, setScatter] = useState();
+  const [heatmap, setHeatmap] = useState();
 
-  const registerUser = async (email, password1, password2) => {
+  const getData = async () => {
     try {
-      const data = JSON.stringify({ email, password1, password2 });
-      const options = { headers: { "content-type": "application/json" } };
-      const response = await axios.post(
-        `http://127.0.0.1:8000/accounts/signup/`,
-        data,
-        options
-      );
-      setAlerts({ message: "Registration successful!", type: "success" });
+      const response = await api.get(`/accounts/dashboard/`);
+      setAverageHighScore(parseFloat(response.data.avg_high_score));
+      setTotalUsers(parseInt(response.data.total_users));
+      setUsers(JSON.parse(response.data.top_users));
+      setGenderPie(JSON.parse(response.data.gender_pie_fig));
+      setAgePie(JSON.parse(response.data.age_group_pie_fig));
+      setBar(JSON.parse(response.data.bar_fig));
+      setScatter(JSON.parse(response.data.scatter_fig));
+      setHeatmap(JSON.parse(response.data.heatmap_fig));
     } catch (error) {
-      setAlerts({
-        message: "Error occurred while registering the user",
-        type: "error",
-      });
+      console.log(error);
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password1 !== password2) {
-      setAlerts({ message: "Passwords do not match!", type: "error" });
-    } else {
-      registerUser(email, password1, password2);
-    }
-  };
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
-    <div className="bg-gray-700 min-h-screen flex flex-col justify-center">
-      <div className="mx-auto w-96 p-8 bg-gray-100 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
-          Join the crew, matey!
-        </h2>
-        {alerts.message && (
-          <Alert message={alerts.message} type={alerts.type} />
-        )}
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-gray-800 font-medium mb-2"
-            >
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+    <>
+      <div className="flex justify-center items-center flex-col mb-12">
+        <h1 className="text-4xl font-bold text-gray-800 tracking-wide">
+          Admin Dashboard
+        </h1>
+        <div className="w-20 h-1 bg-blue-500 mt-2"></div>
+      </div>
+
+      <div className="flex flex-wrap justify-around mx-auto max-w-7xl">
+        <div className="bg-white rounded-lg shadow-lg p-6 m-6">
+          <h2 className="text-lg font-medium mb-2">Average High Score</h2>
+          <div className="text-4xl font-bold text-green-500">
+            {averageHighScore}
           </div>
-          <div>
-            <label
-              htmlFor="password1"
-              className="block text-gray-800 font-medium mb-2"
-            >
-              Password
-            </label>
-            <input
-              id="password1"
-              name="password1"
-              type="password"
-              required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
-              onChange={(e) => setPassword1(e.target.value)}
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="password2"
-              className="block text-gray-800 font-medium mb-2"
-            >
-              Confirm Password
-            </label>
-            <input
-              id="password2"
-              name="password2"
-              type="password"
-              required
-              className="w-full px-          4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
-              onChange={(e) => setPassword2(e.target.value)}
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:bg-blue-700 focus:outline-none"
-          >
-            Sign Up
-          </button>
-        </form>
-        <div className="text-center mt-4">
-          Already have an account?{" "}
-          <a
-            onClick={() => navigate("/login")}
-            className="font-medium text-blue-600 cursor-pointer hover:text-blue-500"
-          >
-            Login here!
-          </a>
+        </div>
+        <div className="bg-white rounded-lg shadow-lg p-6 m-6">
+          <h2 className="text-lg font-medium mb-2">Total Users</h2>
+          <div className="text-4xl font-bold text-blue-500">{totalUsers}</div>
         </div>
       </div>
-    </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl text-center font-bold leading-tight text-gray-900 mb-4">
+          User Leaderboard
+        </h2>
+        <div className="flex flex-col">
+          <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        Email
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      >
+                        High Score
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {users.map((user) => (
+                      <tr key={user.email}>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="text-sm font-medium text-gray-900">
+                            {user.email}
+                          </div>
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <div className="text-sm text-gray-500">
+                            {user.high_score}
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto" style={{ width: "70%" }}>
+        <Plot
+          data={gender_pie?.data}
+          layout={gender_pie?.layout}
+          useResizeHandler
+          style={{ width: "100%" }}
+        />
+        <Plot
+          data={age_pie?.data}
+          layout={age_pie?.layout}
+          useResizeHandler
+          style={{ width: "100%" }}
+        />
+        <Plot
+          data={bar?.data}
+          layout={bar?.layout}
+          useResizeHandler
+          style={{ width: "100%" }}
+        />
+        <Plot
+          data={scatter?.data}
+          layout={scatter?.layout}
+          useResizeHandler
+          style={{ width: "100%" }}
+        />
+        <Plot
+          data={heatmap?.data}
+          layout={heatmap?.layout}
+          useResizeHandler
+          style={{ width: "100%" }}
+        />
+      </div>
+    </>
   );
 };
 

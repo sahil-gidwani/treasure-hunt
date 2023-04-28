@@ -19,20 +19,27 @@ class RegisterSerializer(serializers.ModelSerializer):
     password1 = serializers.CharField(
         write_only=True, required=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True, required=True)
+    gender = serializers.ChoiceField(choices=['Male', 'Female'])
 
     class Meta:
         model = CustomUser
-        fields = ('email', 'password1', 'password2')
+        fields = ('email', 'password1', 'password2', 'age', 'gender')
 
     def validate(self, attrs):
         if attrs['password1'] != attrs['password2']:
             raise serializers.ValidationError(
                 {"password1": "Password fields don't match."})
 
+        age = attrs.get('age')
+        if age is not None and age <= 0:
+            raise serializers.ValidationError(
+                {"age": "Age must be greater than 0."})
+
         return attrs
 
     def create(self, validated_data):
-        user = CustomUser.objects.create(email=validated_data['email'])
+        user = CustomUser.objects.create(
+            email=validated_data['email'], age=validated_data['age'], gender=validated_data['gender'])
         user.set_password(validated_data['password1'])
         user.save()
 
