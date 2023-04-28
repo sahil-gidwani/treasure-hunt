@@ -1,11 +1,52 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import useAxios from "../utils/useAxios";
 
 export default function NavBar() {
+  const api = useAxios();
   const [navbar, setNavbar] = useState(false);
   const { user, logoutUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [level, setLevel] = useState(0);
+
+  useEffect(() => {
+    const getLevel = async () => {
+      try {
+        const response = await api.get("/accounts/get_level/");
+        setLevel(response.data.current_level);
+      } catch (error) {
+        alert("Something went wrong!");
+      }
+    };
+    getLevel();
+  }, []);
+
+  const handleSetLevel = async () => {
+    try {
+      await api.post("/accounts/set_level/", { current_level: 1 });
+    } catch (error) {
+      alert("Something went wrong!");
+    }
+  };
+
+  const handleSetScore = async () => {
+    try {
+      await api.post("/accounts/set_score/", { current_score: 0 });
+    } catch (error) {
+      alert("Something went wrong!");
+    }
+  };
+
+  const handleRestart = async () => {
+    try {
+      await handleSetScore();
+      await handleSetLevel();
+      navigate(`/level1`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <nav className="w-full bg-gray-900 shadow">
@@ -61,24 +102,41 @@ export default function NavBar() {
           >
             {!user ? (
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-white hover:text-blue-200">
-                  <a href="javascript:void(0)">Home</a>
-                </li>
-                <li className="text-white hover:text-blue-200">
-                  <a href="javascript:void(0)">SignUp</a>
-                </li>
-                <li className="text-white hover:text-blue-200">
-                  <a href="javascript:void(0)">Login</a>
-                </li>
+                <button
+                  className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  onClick={() => navigate("/")}
+                >
+                  Home
+                </button>
+                <button
+                  className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  onClick={() => navigate("/signup")}
+                >
+                  SignUp
+                </button>
+                <button
+                  className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </button>
               </ul>
             ) : (
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-white hover:text-blue-200">
-                  <a href="javascript:void(0)">Restart</a>
-                </li>
-                <li className="text-white hover:text-blue-200">
-                  <a href="javascript:void(0)">Logout</a>
-                </li>
+                {level !== 1 && (
+                  <button
+                    className="px-4 py-2 bg-yellow-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                    onClick={() => handleRestart()}
+                  >
+                    Restart
+                  </button>
+                )}
+                <button
+                  className="px-4 py-2 bg-yellow-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  onClick={logoutUser}
+                >
+                  Logout
+                </button>
               </ul>
             )}
           </div>

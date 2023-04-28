@@ -36,6 +36,9 @@ class CustomUserManager(BaseUserManager):
 class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(_('email address'), unique=True)
+    current_level = models.PositiveIntegerField(default=0)
+    current_score = models.PositiveIntegerField(default=0)
+    high_score = models.PositiveIntegerField(default=0)
 
     objects = CustomUserManager()
 

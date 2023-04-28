@@ -10,6 +10,12 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import DashboardPage from "./pages/DashboardPage";
 import StartPage from "./pages/StartPage";
+import Level1Page from "./pages/Level1Page";
+import Level2Page from "./pages/Level2Page";
+import Level3Page from "./pages/Level3Page";
+import Level4Page from "./pages/Level4Page";
+import Level5Page from "./pages/Level5Page";
+import Level6Page from "./pages/Level6Page";
 import Footer from "./components/Footer";
 
 function App() {
@@ -38,6 +44,54 @@ function App() {
                 element={
                   <PrivateRoute>
                     <StartPage />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/level1"
+                element={
+                  <PrivateRoute>
+                    <Level1Page />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/level2"
+                element={
+                  <PrivateRoute>
+                    <Level2Page />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/level3"
+                element={
+                  <PrivateRoute>
+                    <Level3Page />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/level4"
+                element={
+                  <PrivateRoute>
+                    <Level4Page />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/level5"
+                element={
+                  <PrivateRoute>
+                    <Level5Page />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/level6"
+                element={
+                  <PrivateRoute>
+                    <Level6Page />
                   </PrivateRoute>
                 }
               />

@@ -1,7 +1,10 @@
 import React from "react";
 import jackSparrowImg from "../images/jacksparrow.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -16,15 +19,14 @@ export default function Home() {
           alt="Captain Jack Sparrow standing aboard the ship"
         />
       </div>
-      <button className="bg-green-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
-        Start Adventure
-      </button>
-      <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
-        Login
-      </button>
-      <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
-        Sign Up
-      </button>
+      <div className="flex justify-center">
+        <button
+          className="bg-green-500 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+          onClick={() => navigate("/level1")}
+        >
+          Start Adventure
+        </button>
+      </div>
     </div>
   );
 }

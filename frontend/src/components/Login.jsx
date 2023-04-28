@@ -26,7 +26,7 @@ const Login = () => {
       localStorage.setItem("authTokens", JSON.stringify(response.data));
       setAlerts({ message: "Login succesful!", type: "success" });
       if (jwt_decode(response.data.access).isAdmin) navigate("/dashboard");
-      else navigate("/start");
+      else navigate("/level1");
     } catch (error) {
       setAlerts({
         message: "No active account found with the given credentials",
@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-gray-700 min-h-screen flex flex-col justify-center">
+    <div className="bg-green-500 min-h-screen flex flex-col justify-center">
       <div className="mx-auto w-96 p-8 bg-gray-100 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">
           Welcome back, matey!

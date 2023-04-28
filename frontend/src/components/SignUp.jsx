@@ -38,7 +38,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-gray-700 min-h-screen flex flex-col justify-center">
+    <div className="bg-blue-500 min-h-screen flex flex-col justify-center">
       <div className="mx-auto w-96 p-8 bg-gray-100 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-gray-800 mb-6">
           Join the crew, matey!
@@ -97,7 +97,7 @@ const SignUp = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:bg-blue-700 focus:outline-none"
+            className="w-full py-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-500 focus:bg-blue-700 focus:outline-none"
           >
             Sign Up
           </button>
@@ -106,7 +106,7 @@ const SignUp = () => {
           Already have an account?{" "}
           <a
             onClick={() => navigate("/login")}
-            className="font-medium text-blue-600 cursor-pointer hover:text-blue-500"
+            className="font-medium text-blue-700 cursor-pointer hover:text-blue-500"
           >
             Login here!
           </a>
