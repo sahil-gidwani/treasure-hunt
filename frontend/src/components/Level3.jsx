@@ -43,22 +43,6 @@ function Level3() {
     };
   }, [isHovering, audio]);
 
-  const handleSetLevel = async () => {
-    try {
-      await api.post("/accounts/set_level/", { current_level: 4 });
-    } catch (error) {
-      alert("Something went wrong!");
-    }
-  };
-
-  const handleSetScore = async () => {
-    try {
-      await api.post("/accounts/set_score/", { current_score: 60 });
-    } catch (error) {
-      alert("Something went wrong!");
-    }
-  };
-
   const handleSubmit = async (door) => {
     if (door === randomDoor) {
       try {
