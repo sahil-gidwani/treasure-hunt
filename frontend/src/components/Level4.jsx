@@ -28,8 +28,6 @@ function Level4() {
   }, []);
 
   const handleSubmit = async () => {
-    console.log(word);
-    console.log(generatedWord);
     if (word === generatedWord) {
       try {
         const response = await api.get("/accounts/get_score/");
