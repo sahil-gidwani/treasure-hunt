@@ -27,6 +27,19 @@ export default function Home() {
           Start Adventure
         </button>
       </div>
+      <h3 className="text-xl font-serif font-bold text-gray-900 mt-2 mb-10 text-center">
+        You are a member of a group of pirates who have stumbled upon a map
+        leading to the fabled treasure of Captain Jack Sparrow. But the map is
+        not complete and missing crucial information on where the treasure is
+        hidden. You must solve a series of clues and puzzles to find the missing
+        pieces of the map and uncover the location of the treasure. Each clue
+        will lead you to the next, and you must use your wit and cunning to
+        overcome the challenges and avoid the traps that Captain Sparrow has
+        left to protect his treasure. Along the way, you will encounter famous
+        pirates, solve puzzles, and decipher cryptic messages as you search for
+        the treasure that will make you the richest pirate in the Caribbean. Are
+        you ready to take on the challenge and become a pirate legend?
+      </h3>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import useAxios from "../utils/useAxios";
 import ScoreBoard from "./ScoreBoard";
 import { useNavigate } from "react-router-dom";
+import door from "../images/door.jpg";
 
 function Level3() {
   const api = useAxios();
