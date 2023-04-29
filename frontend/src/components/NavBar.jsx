@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import useAxios from "../utils/useAxios";
+import logo from "../images/logo.png";
 
 export default function NavBar() {
   const api = useAxios();
@@ -56,8 +57,12 @@ export default function NavBar() {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
-              <h2 className="text-2xl text-white font-bold">LOGO</h2>
+            <a onClick={() => navigate("/")}>
+              <img
+                className="h-20 px-2 flex justify-around content-start space-evenly"
+                src={logo}
+                alt="logo"
+              />
             </a>
             <div className="md:hidden">
               <button

@@ -33,6 +33,27 @@ function Level5() {
     }
   };
 
+  const coordinates = [];
+  for (let x = 0; x < 10; x++) {
+    for (let y = 0; y < 10; y++) {
+      coordinates.push({ x: x, y: y });
+    }
+  }
+
+  return (
+    <div className="grid grid-cols-10 grid-rows-10 gap-2 h-screen">
+      {coordinates.map((coord) => (
+        <button
+          key={`${coord.x},${coord.y}`}
+          className="bg-gray-200 hover:bg-gray-400 rounded-md focus:outline-none"
+          style={{ gridColumn: `${coord.x + 1}`, gridRow: `${coord.y + 1}` }}
+        >
+          {`${coord.x},${coord.y}`}
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <div>
       <ScoreBoard />
