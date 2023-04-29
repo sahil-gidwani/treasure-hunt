@@ -7,26 +7,13 @@ function Level5() {
   const api = useAxios();
   const navigate = useNavigate();
 
-  const handleSetLevel = async () => {
-    try {
-      await api.post("/accounts/set_level/", { current_level: 6 });
-    } catch (error) {
-      alert("Something went wrong!");
-    }
-  };
-
-  const handleSetScore = async () => {
-    try {
-      await api.post("/accounts/set_score/", { current_score: 100 });
-    } catch (error) {
-      alert("Something went wrong!");
-    }
-  };
-
   const handleSubmit = async () => {
     try {
-      await handleSetScore();
-      await handleSetLevel();
+      const response = await api.get("/accounts/get_score/");
+      await api.post("/accounts/set_score/", {
+        current_score: response.data.current_score + 20,
+      });
+      await api.post("/accounts/set_level/", { current_level: 6 });
       navigate(`/level6`);
     } catch (error) {
       console.log(error);
@@ -51,14 +38,6 @@ function Level5() {
           {`${coord.x},${coord.y}`}
         </button>
       ))}
-    </div>
-  );
-
-  return (
-    <div>
-      <ScoreBoard />
-      <h1>Level 5</h1>
-      <button onClick={handleSubmit}>Go to Level 6</button>
     </div>
   );
 }
