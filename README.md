@@ -10,3 +10,6 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
+- First item
+- Second item
+- Third item
