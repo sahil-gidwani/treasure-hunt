@@ -27,15 +27,11 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 4. Level 4 : Attention to detail, Logical Reasoning
 5. Level 5 : Problem-solving, Adaptibility
 
----
-
 ## Tech Stack
 
 **Client:** React, Axios, TailwindCSS
 
 **Server:** Django Rest Framework, SQLite
-
----
 
 ## Run Locally
 
