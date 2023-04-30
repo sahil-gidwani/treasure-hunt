@@ -4,8 +4,6 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ---
 
-## Theme - very important words
-
 ## Feature List
 - [x] Authentication System - JWT
 - [x] 5 clues (levels)
@@ -19,6 +17,8 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - User Analytics
 - Data Analysis using different graphs
 - User leaderboard
+
+**Theme** - very important words
 
 ### Soft Skills Evaluated
 1. Level 1 : Memory, Organizational skills 
