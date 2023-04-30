@@ -31,9 +31,9 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** React, Axios, TailwindCSS
 
-**Server:** Node, Express
+**Server:** Django Rest Framework, SQLite
 
 ---
 
