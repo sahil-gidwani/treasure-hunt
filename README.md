@@ -6,7 +6,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 **Theme** - very important words
 
-**Feature List**
+### Feature List
 - [x] Authentication System - JWT
 - [x] 5 clues (levels)
 - [x] 2 deadends
@@ -15,7 +15,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - [x] Resume from where you left off and option to restart the game
 - [x] Admin Dashboard 
 
-Additional Features
+**Additional Features**
 - User Analytics
 - Data Analysis using different graphs
 - User leaderboard
@@ -31,4 +31,4 @@ Additional Features
 
 ---
 
-### Steps to reach the Solution
+## Steps to reach the Solution
