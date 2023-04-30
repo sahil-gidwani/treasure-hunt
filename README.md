@@ -21,11 +21,11 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - User leaderboard
 
 ### Soft Skills Evaluated
-1. Level 1 
-2. Level 2
-3. Level 3 : Active Listening
-4. Level 4
-5. Level 5
+1. Level 1 : Memory, Organizational skills 
+2. Level 2 : Pattern recognition, Perseverence
+3. Level 3 : Active Listening, Decision-making skills
+4. Level 4 : Attention to detail, Logical Reasoning
+5. Level 5 : Problem-solving, Adaptibility
 
 ---
 
