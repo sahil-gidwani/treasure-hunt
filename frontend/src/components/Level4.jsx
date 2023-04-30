@@ -89,11 +89,13 @@ function Level4() {
           type="text"
           value={word}
           onChange={(e) => setWord(e.target.value)}
-          className="border border-gray-300 rounded-md p-2 w-full mb-4 text-center"
+          className="mx-auto w-1/2 border border-gray-400 rounded-md p-2 w-full mb-4 text-center"
           style={{ textAlign: "center" }}
         />
         {errorMessage && (
-          <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+          <div className="text-xl text-bold text-red-500 mb-4">
+            {errorMessage}
+          </div>
         )}
         <button
           onClick={handleSubmit}
