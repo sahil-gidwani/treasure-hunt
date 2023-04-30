@@ -21,9 +21,9 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - User leaderboard
 
 ### Soft Skills Evaluated
-1. Level 1
+1. Level 1 
 2. Level 2
-3. Level 3
+3. Level 3 : Active Listening
 4. Level 4
 5. Level 5
 
