@@ -30,4 +30,4 @@ Additional Features
 **Scoring System**
 ---
 
-### Steps to reach the Solution**
+### Steps to reach the Solution
