@@ -81,9 +81,7 @@ Start the frontend server
 
 ## Deployment
 
-[title](https://www.example.com)
-
-[title](https://www.example.com)
+To view the deployed app, visit [https://your-app-url.com](https://your-app-url.com)
 
 ## Gameplay Logic
 
