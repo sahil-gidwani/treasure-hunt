@@ -109,6 +109,16 @@ In the final game, the user must click on three numbers in a specific order to u
 4. Level 4 - Correct input is equal to 20 points
 5. Level 5 - Correct order is equal to 20 points, after 5 tries the score is reset to 0
 
+**Admin Dashboard Features**
+- User Leaderboard
+- Average High Score
+- Number of users
+- Distribution of users by gender - pie chart
+- Distribution of users by age groups - pie chart
+- Average high score of genders - bar chart
+- Relationship between age and high score - scatter plot
+- Correlation between age, gender and high score - heatmap
+
 ## Steps to reach the Solution
 
 1. The user must guess as many correct numbers in order to move to next level
