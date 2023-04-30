@@ -4,4 +4,9 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ---
 
-**Theme** - ==very important words==
+**Theme** - very important words
+
+**Feature List**
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
