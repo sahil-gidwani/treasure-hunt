@@ -92,7 +92,7 @@ Start the frontend server
 1. The user must guess as many correct numbers in order to move to next level
 2. Click the word 'Mitsake'
 3. Click on the door on which you can hear music playing when being hovered over
-4. Click on the ship icon in the footer which takes you to ASCII code document - Decrypt the word which is encoded using ASCII
+4. Click on the ship icon in the footer which takes you to the ASCII codes website - Decrypt the word which is encoded using ASCII
 5. Click on the compass icon to see the grid with all the numbers - Click on the 3 corresponding buttons on the grid in the given order
 
 ## Screenshots
