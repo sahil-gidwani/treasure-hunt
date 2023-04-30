@@ -57,7 +57,6 @@ function Level3() {
       }
     } else {
       try {
-        await api.post("/accounts/set_score/", { current_score: 0 });
         await api.post("/accounts/set_level/", { current_level: 1 });
         navigate(`/lost`);
       } catch (error) {

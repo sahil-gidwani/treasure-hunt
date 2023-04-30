@@ -16,6 +16,7 @@ import Level3Page from "./pages/Level3Page";
 import Level4Page from "./pages/Level4Page";
 import Level5Page from "./pages/Level5Page";
 import Level6Page from "./pages/Level6Page";
+import LostPage from "./pages/LostPage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -92,6 +93,14 @@ function App() {
                 element={
                   <PrivateRoute>
                     <Level6Page />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/lost"
+                element={
+                  <PrivateRoute>
+                    <LostPage />
                   </PrivateRoute>
                 }
               />

@@ -3,7 +3,7 @@ import useAxios from "../utils/useAxios";
 import { useNavigate } from "react-router-dom";
 import ScoreCard from "./ScoreCard";
 
-function Level6() {
+function Lost() {
   const api = useAxios();
   const navigate = useNavigate();
 
@@ -20,10 +20,10 @@ function Level6() {
   return (
     <div>
       <ScoreCard />
-      <h1>You win!</h1>
+      <h1>Game Over!</h1>
       <button onClick={handleRestart}>Restart</button>
     </div>
   );
 }
 
-export default Level6;
+export default Lost;
