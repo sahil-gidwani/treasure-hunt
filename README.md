@@ -29,4 +29,4 @@ Additional Features
 
 ---
 
-**Steps to reach the solution**
+**Steps to reach the Solution**
