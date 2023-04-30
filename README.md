@@ -4,9 +4,9 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ---
 
-### Theme - very important words
+## Theme - very important words
 
-### Feature List
+## Feature List
 - [x] Authentication System - JWT
 - [x] 5 clues (levels)
 - [x] 2 deadends
@@ -32,3 +32,8 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 ---
 
 ## Steps to reach the Solution
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
