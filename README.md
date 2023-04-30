@@ -27,6 +27,7 @@ Additional Features
 4. Level 4
 5. Level 5
 
+**Scoring System**
 ---
 
-**Steps to reach the Solution**
+### Steps to reach the Solution**
