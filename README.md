@@ -103,6 +103,12 @@ In the final game, the user must click on three numbers in a specific order to u
 
 **Scoring System**
 
+1. Level 1 - Each correct guess is equal to 4 points
+2. Level 2 - Correct guess is equal to 20 points
+3. Level 3 - Correct guess is equal to 20 points, incorrect guess resets the score to 0
+4. Level 4 - Correct input is equal to 20 points
+5. Level 5 - Correct order is equal to 20 points, after 5 tries the score is reset to 0
+
 ## Steps to reach the Solution
 
 1. The user must guess as many correct numbers in order to move to next level
