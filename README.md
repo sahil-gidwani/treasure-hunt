@@ -12,7 +12,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - [x] 2 deadends
 - [x] 1 solution
 - [x] User progress tracked
-- [x] Option to resume from where you leave off and option to restart the game
+- [x] Resume from where you left off and option to restart the game
 - [x] Admin Dashboard 
 
 Additional Features
