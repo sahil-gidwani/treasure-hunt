@@ -81,7 +81,7 @@ Start the frontend server
 
 ## Deployment
 
-## Gameplay
+## Gameplay Logic
 
 **Level 1**
 
