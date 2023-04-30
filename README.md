@@ -81,8 +81,6 @@ Start the frontend server
 
 **Scoring System**
 
----
-
 ## Steps to reach the Solution
 
 1. The user must guess as many correct numbers in order to move to next level
