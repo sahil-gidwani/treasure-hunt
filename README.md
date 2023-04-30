@@ -20,7 +20,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - Data Analysis using different graphs
 - User leaderboard
 
-**Soft Skills Evaluated**
+### Soft Skills Evaluated
 1. Level 1
 2. Level 2
 3. Level 3
