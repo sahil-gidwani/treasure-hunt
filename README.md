@@ -37,6 +37,52 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ---
 
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/sahil-gidwani/treasure-hunt.git
+```
+
+Go to the backend project directory
+
+```bash
+  cd backend
+```
+
+Install backend dependencies - you might want to set up a virtual environment first
+
+```bash
+  pip install requirements.txt
+```
+
+Start the backend server
+
+```bash
+  py manage.py runserver
+```
+
+On another terminal
+
+Go to the frontend project directory
+
+```bash
+  cd frontend
+```
+
+Install frontend dependencies
+
+```bash
+  npm install
+```
+
+Start the frontend server
+
+```bash
+  npm run start
+```
+
 **Scoring System**
 
 ---
