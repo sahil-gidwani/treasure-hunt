@@ -33,7 +33,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 **Server:** Django Rest Framework, SQLite
 
-## Run Locally
+## Getting Started
 
 Clone the project
 
@@ -78,6 +78,8 @@ Start the frontend server
 ```bash
   npm run start
 ```
+
+## Deployment
 
 ## Gameplay
 
