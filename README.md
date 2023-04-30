@@ -27,12 +27,15 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 4. Level 4
 5. Level 5
 
+---
 
 ## Tech Stack
 
 **Client:** React, Redux, TailwindCSS
 
 **Server:** Node, Express
+
+---
 
 **Scoring System**
 
