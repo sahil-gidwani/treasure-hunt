@@ -79,6 +79,15 @@ Start the frontend server
   npm run start
 ```
 
+## Running Tests
+
+To run backend tests, run the following command
+
+```bash
+  cd backend
+  py manage.py test
+```
+
 ## Deployment
 
 To view the deployed app, visit [https://your-app-url.com](https://your-app-url.com)
