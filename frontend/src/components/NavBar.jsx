@@ -94,23 +94,20 @@ export default function NavBar() {
           >
             {!user ? (
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <button className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900">
-                  Primary
-                </button>
                 <button
-                  className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900"
                   onClick={() => navigate("/")}
                 >
                   Home
                 </button>
                 <button
-                  className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900"
                   onClick={() => navigate("/signup")}
                 >
-                  SignUp
+                  Sign Up
                 </button>
                 <button
-                  className="px-4 py-2 bg-purple-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900"
                   onClick={() => navigate("/login")}
                 >
                   Login
@@ -120,14 +117,14 @@ export default function NavBar() {
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 {level !== 1 && (
                   <button
-                    className="px-4 py-2 bg-yellow-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                    className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900"
                     onClick={() => handleRestart()}
                   >
                     Restart
                   </button>
                 )}
                 <button
-                  className="px-4 py-2 bg-yellow-500 rounded-md text-white font-medium hover:bg-blue-200 hover:text-gray-900"
+                  className="border border-white text-white font-medium rounded-md px-4 py-2 hover:bg-blue-200 hover:text-gray-900"
                   onClick={logoutUser}
                 >
                   Logout

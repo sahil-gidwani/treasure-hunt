@@ -78,9 +78,14 @@ function Level4() {
         </div>
       </div>
       <div className="flex flex-col justify-center items-center h-full">
-        <div className="text-xl font-bold mb-2">Crack the Code:</div>
+        <div className="text-3xl font-bold text-gray-800 tracking-wide uppercase mb-4">
+          Crack the Code:
+        </div>
         <div className="text-3xl mb-8">{asciiCode}</div>
-        <label htmlFor="word" className="block text-lg font-medium mb-2">
+        <label
+          htmlFor="word"
+          className="text-2xl font-semibold text-gray-700 tracking-wide uppercase mb-4"
+        >
           Deciphered word:
         </label>
         <input
@@ -89,17 +94,17 @@ function Level4() {
           type="text"
           value={word}
           onChange={(e) => setWord(e.target.value)}
-          className="mx-auto w-1/2 border border-gray-400 rounded-md p-2 w-full mb-4 text-center"
+          className="mx-auto w-96 border border-gray-400 rounded-md p-2 mb-4 text-center"
           style={{ textAlign: "center" }}
         />
         {errorMessage && (
-          <div className="text-xl text-bold text-red-500 mb-4">
+          <div className="text-xl font-bold text-red-500 mb-4">
             {errorMessage}
           </div>
         )}
         <button
           onClick={handleSubmit}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
         >
           Submit
         </button>

@@ -47,7 +47,7 @@ function Level2() {
   };
 
   const StyledNumber = ({ number }) => (
-    <button className="bg-blue-200 text-center font-bold p-4 m-2 rounded-md hover:bg-blue-400">
+    <button className="bg-blue-50 text-center font-bold p-4 m-2 rounded-md hover:bg-blue-100">
       {number}
     </button>
   );
@@ -77,18 +77,18 @@ function Level2() {
           Arr, ye be lookin' for the coordinates to find the treasure chest?
         </h1>
         <div className="border-t-2 border-gray-600 border-dashed w-32 mx-auto my-4"></div>
-        <div className="text-2xl font-semibold text-gray-700 tracking-widest">
-          <div className="container mx-auto my-8">
-            <NumberGrid />
-          </div>
-        </div>
-        <h1 className="text-3xl font-bold text-gray-800 tracking-wide uppercase mb-2">
+        <h1 className="text-2xl font-semibold text-gray-700 tracking-wide uppercase mb-2">
           Click on the{" "}
           <a className="hover:cursor-text" onClick={() => handleSubmit()}>
             mitsake
           </a>{" "}
           and it should lead you one step closer...
         </h1>
+        <div className="text-2xl font-semibold text-gray-700 tracking-widest">
+          <div className="container mx-auto my-8">
+            <NumberGrid />
+          </div>
+        </div>
       </div>
     </>
   );

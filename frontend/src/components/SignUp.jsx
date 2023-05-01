@@ -54,9 +54,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-blue-500 min-h-screen flex flex-col justify-center">
-      <div className="mx-auto w-96 p-8 bg-gray-100 rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
+    <div className="min-h-screen flex flex-col justify-center">
+      <div className="mx-auto w-1/3 p-8 bg-gray-50 rounded-lg shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
           Join the crew, matey!
         </h2>
         {alerts.message && (
@@ -75,7 +75,7 @@ const SignUp = () => {
               name="email"
               type="email"
               required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -91,7 +91,7 @@ const SignUp = () => {
               name="password1"
               type="password"
               required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword1(e.target.value)}
             />
           </div>
@@ -107,7 +107,7 @@ const SignUp = () => {
               name="password2"
               type="password"
               required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword2(e.target.value)}
             />
           </div>
@@ -124,7 +124,7 @@ const SignUp = () => {
               type="number"
               min="1"
               required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setAge(e.target.value)}
             />
           </div>
@@ -139,10 +139,12 @@ const SignUp = () => {
               id="gender"
               name="gender"
               required
-              className="w-full px-4 py-2 rounded-lg bg-gray-200 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+              className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setGender(e.target.value)}
             >
-              <option value="">--Please select your gender--</option>
+              <option value="" className="text-center">
+                --Please select your gender--
+              </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
@@ -150,7 +152,7 @@ const SignUp = () => {
           <div>
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium focus:outline-none focus:shadow-outline"
+              className="mt-2 w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium focus:outline-none focus:shadow-outline"
             >
               Register
             </button>

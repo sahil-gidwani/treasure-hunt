@@ -14,6 +14,11 @@ function Level3() {
   const [audio] = useState(new Audio(music));
   const [showButton, setShowButton] = useState(true);
 
+  const handleStartClick = (e) => {
+    setShowButton(false);
+    window.scrollTo(1, e.clientY);
+  };
+
   const handleDoorHover = (door) => {
     if (door === randomDoor) {
       setIsHovering(true);
@@ -124,7 +129,7 @@ function Level3() {
         <div className="text-center mt-4">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => setShowButton(false)}
+            onClick={handleStartClick}
           >
             Start
           </button>

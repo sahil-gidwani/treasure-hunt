@@ -111,7 +111,7 @@ const Level5 = () => {
     return coordinates.map((coord) => (
       <button
         key={`${coord.x},${coord.y}`}
-        className={`bg-blue-200 hover:bg-blue-400 rounded-md focus:outline-none`}
+        className={`bg-blue-100 hover:bg-blue-200 rounded-md focus:outline-none`}
         style={{ gridColumn: `${coord.x + 1}`, gridRow: `${coord.y + 1}` }}
         disabled
       >
@@ -146,33 +146,39 @@ const Level5 = () => {
       <div>
         <div className="flex flex-col items-center">
           <h1 className="text-4xl font-bold mb-4">Code :</h1>
-          <div className="flex mb-8">
+          <div className="flex mb-8 rounded-lg bg-gray-50 shadow pt-4 pl-4 pb-4">
             {numbers.map((number, index) => (
               <p
                 key={index}
-                className="text-4xl mr-4"
+                className="text-4xl mr-4 text-center font-semibold"
               >{`${number.x}${number.y}`}</p>
             ))}
           </div>
         </div>
-        <button
-          className="mb-4"
-          onClick={() => setShowClue((prevState) => !prevState)}
-        >
-          🧭
-        </button>
+        <div className="flex justify-between mb-2">
+          <button
+            className="mb-4"
+            onClick={() => setShowClue((prevState) => !prevState)}
+          >
+            🧭
+          </button>
+          <div className="text-lg bg-green-500 hover:bg-green-700 hover:cursor-default text-white py-2 px-4 rounded">
+            Attempts left: {triesLeft}
+          </div>
+        </div>
         {showClue && (
           <div className="grid grid-cols-10 gap-2 mb-8">{renderClue()}</div>
         )}
-        <div className="grid grid-cols-10 gap-2 mb-8">{renderButtons()}</div>
+        <div className="mt-4 grid grid-cols-10 gap-2 mb-8">
+          {renderButtons()}
+        </div>
         <div className="flex flex-col items-center">
           <button
-            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none mb-4"
+            className="w-32 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none mt-4"
             onClick={handleReset}
           >
             Reset
           </button>
-          <div className="text-2xl font-bold">Attempts left: {triesLeft}</div>
         </div>
       </div>
     </>

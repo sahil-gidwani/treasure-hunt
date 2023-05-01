@@ -48,11 +48,11 @@ function Level1() {
     }, [timeRemaining, intervalId]);
 
     return (
-      <div className="rounded-lg bg-white shadow p-4">
+      <div className="rounded-lg bg-gray-50 shadow p-4">
         <div className="text-center font-bold text-3xl mb-4">
-          {numbers.join(" ")}
+          {numbers.join("\t")}
         </div>
-        <div className="text-center text-lg mb-2">
+        <div className="text-center font-semibold text-lg mb-2">
           Time remaining: {timeRemaining} seconds
         </div>
       </div>
@@ -131,7 +131,7 @@ function Level1() {
                     type="number"
                     min="10"
                     max="99"
-                    className="text-center rounded-md border-gray-300 border p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="bg-gray-50 text-center rounded-md border-gray-300 border p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     value={value}
                     onChange={(event) => handleInputChange(event, index)}
                   />
@@ -140,7 +140,7 @@ function Level1() {
               <div className="text-center mt-4">
                 <button
                   type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-8"
                 >
                   Submit
                 </button>
@@ -154,7 +154,7 @@ function Level1() {
               </div>
               <div className="text-center mt-4">
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                   onClick={handleGoToNextLevel}
                 >
                   Go to Next Level
