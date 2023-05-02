@@ -16,6 +16,8 @@ function Win() {
           currentScore: response.data.current_score,
           highScore: response.data.high_score,
         });
+        await api.post("/accounts/set_score/", { current_score: 0 });
+        await api.post("/accounts/set_level/", { current_level: 1 });
       } catch (error) {
         console.log(error);
       }
