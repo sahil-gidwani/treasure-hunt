@@ -24,7 +24,7 @@ export default function NavBar() {
       };
       getLevel();
     }
-  }, [level]);
+  }, []);
 
   const handleRestart = async () => {
     try {
