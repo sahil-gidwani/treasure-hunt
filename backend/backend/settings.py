@@ -177,3 +177,5 @@ CORS_ALLOW_CREDENTIALS = True
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+CSRF_TRUSTED_ORIGINS = ['https://treasure-hunt-backend.up.railway.app']
