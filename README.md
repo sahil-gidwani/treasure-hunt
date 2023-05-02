@@ -142,4 +142,4 @@ To run backend tests, run the following command
 
 ## Deployment
 
-To view the deployed app, visit [https://endearing-gumption-97fd43.netlify.app/](https://endearing-gumption-97fd43.netlify.app/)
+To view the deployed app, visit [https://carribean-quest.netlify.app/](https://carribean-quest.netlify.app/)
