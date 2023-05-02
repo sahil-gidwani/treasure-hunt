@@ -90,7 +90,7 @@ To run backend tests, run the following command
 
 ## Deployment
 
-To view the deployed app, visit [https://your-app-url.com](https://your-app-url.com)
+To view the deployed app, visit [https://endearing-gumption-97fd43.netlify.app/](https://endearing-gumption-97fd43.netlify.app/)
 
 ## Gameplay Logic
 
