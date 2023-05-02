@@ -147,7 +147,7 @@ def DashboardView(request):
     heatmap_fig_JSON = plotly.io.to_json(heatmap_fig)
 
     content = {
-        "avg_high_score": avg_high_score,
+        "avg_high_score": round(avg_high_score, 2),
         "total_users": total_users,
         "top_users": top_users.to_json(orient="records"),
         "gender_pie_fig": gender_pie_fig_JSON,
