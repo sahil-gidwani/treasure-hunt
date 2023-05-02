@@ -10,6 +10,7 @@ const SignUp = () => {
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [alerts, setAlerts] = useState({});
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
   const registerUser = async (email, password1, password2, age, gender) => {
@@ -34,6 +35,8 @@ const SignUp = () => {
         message: "Error occurred while registering the user",
         type: "error",
       });
+      setErrors(error.response.data);
+      console.log(error.response.data);
     }
   };
 
@@ -78,6 +81,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setEmail(e.target.value)}
             />
+            {errors.email && (
+              <Alert message={errors.email} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -94,6 +100,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword1(e.target.value)}
             />
+            {errors.password1 && (
+              <Alert message={errors.password1} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -110,6 +119,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword2(e.target.value)}
             />
+            {errors.password2 && (
+              <Alert message={errors.password2} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -127,6 +139,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setAge(e.target.value)}
             />
+            {errors.age && (
+              <Alert message={errors.age} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -148,6 +163,9 @@ const SignUp = () => {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
+            {errors.gender && (
+              <Alert message={errors.gender} type="info" />
+            )}
           </div>
           <div>
             <button
