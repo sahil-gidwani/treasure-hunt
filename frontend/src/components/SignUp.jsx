@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Alert from "./Alert";
+import jwt_decode from "jwt-decode";
+import AuthContext from "../context/AuthContext";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -12,6 +14,7 @@ const SignUp = () => {
   const [alerts, setAlerts] = useState({});
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { setUser, setAuthTokens } = useContext(AuthContext);
 
   const registerUser = async (email, password1, password2, age, gender) => {
     try {
@@ -29,14 +32,25 @@ const SignUp = () => {
         data,
         options
       );
-      setAlerts({ message: "Registration successful!", type: "success" });
+
+      const password = password1;
+      const data2 = JSON.stringify({ email, password });
+      const options2 = { headers: { "content-type": "application/json" } };
+      const response2 = await axios.post(
+        `https://treasure-hunt-backend.up.railway.app/accounts/token/`,
+        data2,
+        options2
+      );
+      setAuthTokens(response2.data);
+      setUser(jwt_decode(response2.data.access));
+      localStorage.setItem("authTokens", JSON.stringify(response2.data));
+      navigate("/level1");
     } catch (error) {
       setAlerts({
         message: "Error occurred while registering the user",
         type: "error",
       });
       setErrors(error.response.data);
-      console.log(error.response.data);
     }
   };
 
