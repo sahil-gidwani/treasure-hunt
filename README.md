@@ -27,6 +27,8 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ## Gameplay Logic
 
+The game gets progressively more difficult as you move through each level
+
 **Level 1**
 
 "Captain's Challenge" is a memory game. The player is presented with five random two-digit numbers on the screen and has five seconds to memorize them. After the time is up, the numbers disappear, and the player is presented with five empty input fields. The player must then recall and input the five numbers in the correct order. The player's score is based on the number of correct answers they provide.
