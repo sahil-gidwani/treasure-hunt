@@ -40,7 +40,7 @@ function Win() {
         style={{ backgroundImage: `url(${lighthouse})` }}
       >
         <div className="flex flex-col items-center justify-center h-screen backdrop-blur-sm">
-          <div className="bg-transparent rounded-xl p-8 shadow-lg text-center">
+          <div className="bg-transparent rounded-xl p-8 shadow-sm text-center">
             <h1 className="text-3xl font-bold text-white tracking-wide uppercase mb-6">
               Hard Luck! Try again!
             </h1>

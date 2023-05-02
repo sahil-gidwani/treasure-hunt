@@ -43,7 +43,7 @@ export default function NavBar() {
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a onClick={() => navigate("/")}>
               <img
-                className="h-20 px-2 flex justify-around content-start space-evenly"
+                className="h-16 px-2 flex justify-around content-start space-evenly hover:cursor-pointer"
                 src={logo}
                 alt="logo"
               />

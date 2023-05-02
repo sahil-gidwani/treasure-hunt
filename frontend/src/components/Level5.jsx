@@ -162,7 +162,7 @@ const Level5 = () => {
           >
             🧭
           </button>
-          <div className="text-lg bg-green-500 hover:bg-green-700 hover:cursor-default text-white py-2 px-4 rounded">
+          <div className="text-lg bg-green-500 hover:cursor-default text-white py-2 px-4 rounded">
             Attempts left: {triesLeft}
           </div>
         </div>
