@@ -102,7 +102,7 @@ This is a game where the player is presented with a sequence of numbers, and the
 
 **Level 3**
 
-This is a game where the player is presented with three doors and a clue in the form of a poem. The player's task is to use their senses, specifically their hearing, to identify which door is correct. The player can hover their mouse over the doors to listen for any sounds that might indicate where the treasure is located. Once the player has identified which door they believe has the treasure, they can click on it to submit their choice. If they have chosen the correct door, they advance to the next level and score points. If they choose the wrong door, they lose the game and lead to a dead-end.
+This is a game where the player is presented with three doors and a clue in the form of a poem. The player's task is to use their senses, specifically their hearing, to identify which door is correct. The player can hover their mouse over the doors to listen for any sounds that might indicate where the treasure is located. Once the player has identified which door they believe has the treasure, they can click on it to submit their choice. If they have chosen the correct door, they advance to the next level and score points. If they choose the wrong door, they lose the game and lead to game over.
 
 **Level 4**
 
@@ -110,7 +110,11 @@ This is a game called "Pirate Cipher Quest" where the player needs to solve a co
 
 **Level 5**
 
-In the final game, the user must click on three numbers in a specific order to unlock a treasure chest. The numbers are randomly generated and displayed to the user when the game starts. The user is also presented with a clue in the form of a riddle. The user then clicks on a 10x10 grid to select numbers in the order they were displayed. If the button on the grid clicked matches one of the numbers then it turns green else red. The user has 5 tries to unlock the chest. If the user is successful, they win. If the user is unsuccessful after 5 tries, they are redirected to a dead-end. There is also an option to display a clue (compass), which displays all of the possible number coordinates on the grid.
+In the final game, the user must click on three numbers in a specific order to unlock a treasure chest. The numbers are randomly generated and displayed to the user when the game starts. The user is also presented with a clue in the form of a riddle. The user then clicks on a 10x10 grid to select numbers in the order they were displayed. If the button on the grid clicked matches one of the numbers then it turns green else red. The user has 5 tries to unlock the chest. If the user is successful, they win. If the user is unsuccessful after 5 tries, they are redirected to game over. There is also an option to display a clue (compass), which displays all of the possible number coordinates on the grid.
+
+**Deadends**
+1. Level 2
+2. Level 4
 
 **Scoring System**
 
