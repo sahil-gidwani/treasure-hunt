@@ -157,7 +157,7 @@ const Level5 = () => {
         </div>
         <div className="flex justify-between mb-2">
           <button
-            className="mb-4"
+            className="mb-4 text-xl"
             onClick={() => setShowClue((prevState) => !prevState)}
           >
             🧭

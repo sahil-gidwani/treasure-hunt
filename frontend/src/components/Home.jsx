@@ -1,7 +1,5 @@
 import React from "react";
-import jackSparrowImg from "../images/jacksparrow.jpg";
 import { useNavigate } from "react-router-dom";
-import bgSea from "../images/bg-sea.jpg";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -54,36 +52,6 @@ export default function Home() {
           >
             Start Adventure
           </button>
-        </div>
-      </div>
-      <div
-        className="h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(${bgSea})` }}
-      >
-        <div className="flex flex-col justify-center items-center bg-blend-overlay">
-          <h1 className="text-5xl font-serif font-bold text-gray-900 mt-2 mb-10 text-center">
-            Ahoy matey! Join us on a swashbuckling adventure!
-          </h1>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <h2 className="font-serif text-center tracking-wide text-3xl font-bold mb-6">
-            Embark on a Treasure Hunt with Pirates
-          </h2>
-          <p className="font-serif text-center tracking-wide text-lg leading-7 mb-8">
-            Join a group of pirates on a treasure hunt for Captain Jack
-            Sparrow's fabled treasure. Solve a series of clues, puzzles, and
-            challenges to find the missing pieces of the map and uncover the
-            treasure's location. You'll encounter famous pirates, decipher
-            cryptic messages, and avoid traps to become the richest pirate in
-            the Caribbean.
-          </p>
         </div>
       </div>
     </>

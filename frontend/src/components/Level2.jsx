@@ -74,15 +74,15 @@ function Level2() {
       <ScoreBoard />
       <div className="text-center">
         <h1 className="text-5xl font-bold text-gray-800 tracking-wide uppercase mb-2">
-          Arr, ye be lookin' for the coordinates to find the treasure chest?
+          Raiders of the Lost Symbol: Hunt for the Outlier
         </h1>
         <div className="border-t-2 border-gray-600 border-dashed w-32 mx-auto my-4"></div>
         <h1 className="text-2xl font-semibold text-gray-700 tracking-wide uppercase mb-2">
-          Click on the{" "}
+          Click on the mistake and it should lead you one step closer to the{" "}
           <a className="hover:cursor-text" onClick={() => handleSubmit()}>
-            mitsake
+            traesure
           </a>{" "}
-          and it should lead you one step closer...
+          ...
         </h1>
         <div className="text-2xl font-semibold text-gray-700 tracking-widest">
           <div className="container mx-auto my-8">
