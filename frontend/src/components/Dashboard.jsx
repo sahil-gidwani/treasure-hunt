@@ -46,7 +46,7 @@ const Dashboard = () => {
         <div className="bg-white rounded-lg shadow-lg p-6 m-6">
           <h2 className="text-lg font-medium mb-2">Average High Score</h2>
           <div className="text-4xl font-bold text-green-500">
-            {averageHighScore}
+            {averageHighScore.toFixed(2)}
           </div>
         </div>
         <div className="bg-white rounded-lg shadow-lg p-6 m-6">
