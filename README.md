@@ -27,7 +27,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 
 ## Gameplay Logic
 
-The game gets progressively more difficult as you move through each level
+*The difficulty level increases gradually as you progress through each level of the game.*
 
 **Level 1**
 
