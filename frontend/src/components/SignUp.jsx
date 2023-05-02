@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Alert from "./Alert";
+import jwt_decode from "jwt-decode";
+import AuthContext from "../context/AuthContext";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +12,9 @@ const SignUp = () => {
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");
   const [alerts, setAlerts] = useState({});
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { setUser, setAuthTokens } = useContext(AuthContext);
 
   const registerUser = async (email, password1, password2, age, gender) => {
     try {
@@ -28,12 +32,25 @@ const SignUp = () => {
         data,
         options
       );
-      setAlerts({ message: "Registration successful!", type: "success" });
+
+      const password = password1;
+      const data2 = JSON.stringify({ email, password });
+      const options2 = { headers: { "content-type": "application/json" } };
+      const response2 = await axios.post(
+        `http://127.0.0.1:8000/accounts/token/`,
+        data2,
+        options2
+      );
+      setAuthTokens(response2.data);
+      setUser(jwt_decode(response2.data.access));
+      localStorage.setItem("authTokens", JSON.stringify(response2.data));
+      navigate("/level1");
     } catch (error) {
       setAlerts({
         message: "Error occurred while registering the user",
         type: "error",
       });
+      setErrors(error.response.data);
     }
   };
 
@@ -78,6 +95,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setEmail(e.target.value)}
             />
+            {errors.email && (
+              <Alert message={errors.email} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -94,6 +114,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword1(e.target.value)}
             />
+            {errors.password1 && (
+              <Alert message={errors.password1} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -110,6 +133,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setPassword2(e.target.value)}
             />
+            {errors.password2 && (
+              <Alert message={errors.password2} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -127,6 +153,9 @@ const SignUp = () => {
               className="border border-slate-300 w-full px-4 py-2 rounded-lg bg-gray-100 text-gray-800 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
               onChange={(e) => setAge(e.target.value)}
             />
+            {errors.age && (
+              <Alert message={errors.age} type="info" />
+            )}
           </div>
           <div>
             <label
@@ -148,6 +177,9 @@ const SignUp = () => {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
+            {errors.gender && (
+              <Alert message={errors.gender} type="info" />
+            )}
           </div>
           <div>
             <button
