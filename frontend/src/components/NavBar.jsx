@@ -12,7 +12,7 @@ export default function NavBar() {
   const [level, setLevel] = useState(0);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("authTokens");
     if (token) {
       const getLevel = async () => {
         try {
@@ -24,7 +24,7 @@ export default function NavBar() {
       };
       getLevel();
     }
-  }, []);
+  }, [level]);
 
   const handleRestart = async () => {
     try {
