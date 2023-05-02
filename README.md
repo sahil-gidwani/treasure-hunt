@@ -18,7 +18,7 @@ The goal of the project is to create an interactive puzzle that can be accessed 
 - Data Analysis using different graphs
 - User leaderboard
 
-**Theme** - very important words
+**Theme** - Pirates and Treasure Hunt
 
 ### Soft Skills Evaluated
 1. Level 1 : Memory, Organizational skills 
