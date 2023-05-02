@@ -24,7 +24,7 @@ const SignUp = () => {
       });
       const options = { headers: { "content-type": "application/json" } };
       const response = await axios.post(
-        `http://127.0.0.1:8000/accounts/signup/`,
+        `https://treasure-hunt-backend.up.railway.app/accounts/signup/`,
         data,
         options
       );
